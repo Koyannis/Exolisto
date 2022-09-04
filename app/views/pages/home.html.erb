@@ -1,12 +1,10 @@
-<div class="container mx-auto px-4 py-4 max-w-4xl bg-white rounded-lg h-screen text-center">
+<div class="container mx-auto px-4 py-4 max-w-4xl bg-white rounded-lg max-h-screen text-center">
 
   <div class="text-xl">Bienvenue !</div>
 
+  <div class= "grid grid-cols-2 gap-4">
   <% @exercices.each do |exe| %>
-    <div>
-      <%= exe.name %> : <%= exe.length %>
-    </div>
-    <div> <%= exe.description %></div>
+    <%= render(ExerciceCardComponent.new(exercice: exe)) %>
   <% end %>
-
+  </div>
 </div>
